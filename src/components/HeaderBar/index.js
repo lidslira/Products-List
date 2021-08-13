@@ -4,15 +4,15 @@ import {useNavigation} from '@react-navigation/core';
 import {styles} from './styles';
 import {HOME} from '~/constants/routes';
 
-const RegisterBar = () => {
+const HeaderBar = ({title}) => {
   const navigation = useNavigation();
 
   return (
     <Appbar.Header style={styles.header}>
       <Appbar.BackAction onPress={() => navigation.navigate(HOME)} />
-      <Appbar.Content title="CADASTRO DE NOVOS ITENS" />
+      <Appbar.Content title={title} />
     </Appbar.Header>
   );
 };
 
-export default RegisterBar;
+export default HeaderBar;

@@ -1,8 +1,7 @@
 import React from 'react';
 
-import RegisterBar from '~/components/RegisterBar';
+import HeaderBar from '~/components/HeaderBar';
 import CategoryPicker from '~/components/CategoryPicker';
-// import Header from '../../components/Header';
 // import {listItens} from '../../data/categories';
 
 import * as S from './styles';
@@ -10,7 +9,7 @@ import * as S from './styles';
 const Register = () => {
   return (
     <S.Container>
-      <RegisterBar />
+      <HeaderBar title="CADASTRAR NOVO ITEM" />
       <S.RegisterArea>
         <S.TextInput placeholder="Item que deseja adicionar" required />
         <S.TextInput placeholder="Quantidade" keyboardType="numeric" required />

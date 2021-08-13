@@ -2,13 +2,13 @@ import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  width: 230px;
+  width: 200px;
   margin-top: 18px;
   background-color: white;
 `;
 
 export const CategoryContainer = styled.TouchableOpacity`
-  width: 230px;
+  width: 200px;
   height: 50px;
   font-size: 16px;
   align-items: center;
@@ -21,7 +21,8 @@ export const CategoryContainer = styled.TouchableOpacity`
 export const styles = StyleSheet.create({
   picker: {
     height: 50,
-    width: 230,
+    width: 200,
     color: 'black',
+    textAlign: 'center',
   },
 });
