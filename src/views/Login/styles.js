@@ -8,9 +8,9 @@ export const KeyboardAvoidingView = styled.KeyboardAvoidingView`
 `;
 
 export const StatusBar = styled.StatusBar.attrs(() => ({
-  backgroundColor: "transparent",
+  backgroundColor: 'transparent',
   barStyle: 'dark-content',
-  translucent: true
+  translucent: true,
 }))``;
 
 export const ImageArea = styled.Image`
@@ -36,12 +36,14 @@ export const HeaderTitle = styled.Text`
 export const TextInput = styled.TextInput`
   height: 50px;
   width: 200px;
-  border-bottom-width: 2px;
+  border-width: 1.5px;
   margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
 `;
 
 export const Button = styled.TouchableOpacity`
-  background-color: #53b175;
+  background-color: ${({theme}) => theme.Colors.turquoise};
   height: 60px;
   width: 230px;
   margin-top: 20px;

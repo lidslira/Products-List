@@ -1,11 +1,7 @@
-import React, { useState } from "react";
-import { CheckBox } from "react-native";
+import React, {useState} from 'react';
+import {CheckBox} from 'react-native';
 
-import {
-  Container,
-  CheckboxContainer,
-  Text
-} from './styles';
+import {Container, CheckboxContainer, Text} from './styles';
 
 const GetCheck = () => {
   const [isSelected, setSelection] = useState(false);
@@ -20,7 +16,7 @@ const GetCheck = () => {
         />
         <Text>Do you like React Native?</Text>
       </CheckboxContainer>
-      <Text>Is CheckBox selected: {isSelected ? "👍" : "👎"}</Text>
+      <Text>Is CheckBox selected: {isSelected ? '👍' : '👎'}</Text>
     </Container>
   );
 };

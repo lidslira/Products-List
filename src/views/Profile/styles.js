@@ -13,14 +13,31 @@ export const ProfileArea = styled.View`
   justify-content: center;
   background-color: white;
 `;
-export const Title = styled.Text`
-  font-size: 24px;
-  font-weight: bold;
+
+export const ImageArea = styled.View`
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+`;
+
+export const ContainerNameTitle = styled.Text`
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   margin-top: 10px;
 `;
 
-export const Caption = styled.Text`
-  font-size: 15px;
+export const TitleText = styled.Text`
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+`;
+
+export const Text = styled.Text`
+  font-size: 20px;
   color: gray;
 `;
 
@@ -32,6 +49,7 @@ export const Row = styled.View`
 export const UserInfoSection = styled.View`
   padding: 30px;
   margin-bottom: 25px;
+  align-items: center;
 `;
 
 export const AvatarColor = styled.View`
@@ -43,3 +61,16 @@ export const styles = StyleSheet.create({
     backgroundColor: '#40e0d0',
   },
 });
+
+export const ButtonText = styled.Text`
+  color: ${({theme}) => theme.Colors.black};
+  font-size: 20px;
+`;
+
+export const Button = styled.TouchableOpacity`
+  margin-top: 10px;
+  border-radius: 6px;
+  padding: 15px;
+  width: 100%;
+  background-color: ${({theme}) => theme.Colors.white};
+`;
