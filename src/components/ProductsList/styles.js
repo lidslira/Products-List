@@ -16,7 +16,6 @@ export const TitleCategory = styled.Text`
   font-size: 20px;
   color: black;
   font-weight: bold;
-  border-bottom-width: 1px;
 `;
 
 export const TitleItem = styled.Text`
@@ -27,8 +26,4 @@ export const TitleItem = styled.Text`
 export const List = styled.FlatList`
   width: 100%;
   padding: 20px;
-`;
-
-export const CheckContainer = styled.View`
-  width: 20%;
 `;
