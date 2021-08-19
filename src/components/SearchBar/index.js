@@ -7,12 +7,12 @@ const SearchArea = () => {
     <SearchBar
       lightTheme
       cancelIcon={false}
-      inputStyle={{borderRadius: 1}}
+      inputStyle={{}}
       searchIcon={<Icon name="magnify" color="black" size={20} />}
       containerStyle={{
         backgroundColor: 'white',
-        borderWidth: 0.5,
-        borderRadius: 5,
+        borderWidth: 0,
+        borderRadius: 0,
       }}
       placeholder="Search here..."
     />

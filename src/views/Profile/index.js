@@ -18,39 +18,51 @@ const Profile = () => {
   const logout = () => {
     dispatch(logoutAction());
   };
+
   return (
     <S.Container>
       <S.ProfileArea>
         <S.ImageArea>
-          <Avatar.Image size={80} style={S.styles.avatar} />
+          <Avatar.Image size={100} style={S.styles.avatar} />
         </S.ImageArea>
-        <S.ContainerNameTitle>
+        {currentUser?.fullName ? (
+          <S.ContainerNameTitle>
+            <S.TitleText>Olá, {currentUser.fullName}</S.TitleText>
+          </S.ContainerNameTitle>
+        ) : (
           <S.TitleText>
-            Olá, {currentUser.fullName}
-            {` `}
+            Olá usuário, {`\n`} insira suas informações =D
           </S.TitleText>
+        )}
+        <S.IconContainer>
           <Icon
             name="pencil"
             size={30}
             onPress={() => navigation.navigate(EDITPROFILE)}
           />
-          {` `}
           <Icon name="logout" size={30} onPress={() => logout()} />
-        </S.ContainerNameTitle>
+        </S.IconContainer>
         <S.UserInfoSection>
-          <S.Row>
-            <Icon name="calendar" size={25} />
-            <S.Text> {currentUser.birthDate} </S.Text>
-          </S.Row>
-          <S.Row>
-            <S.Text> {currentUser.gender} </S.Text>
-          </S.Row>
-          <S.Row>
-            <Icon name="map-marker-radius" size={25} />
-            <S.Text>
-              {` ${currentUser.address.city} - ${currentUser.address.state}, ${currentUser.address.country}`}
-            </S.Text>
-          </S.Row>
+          {currentUser?.birthDate && (
+            <S.Column>
+              <S.Label> Data de nascimento: </S.Label>
+              <S.Text>{currentUser.birthDate} </S.Text>
+            </S.Column>
+          )}
+          {currentUser?.gender && (
+            <S.Column>
+              <S.Label> Gênero: </S.Label>
+              <S.Text> {currentUser.gender} </S.Text>
+            </S.Column>
+          )}
+          {currentUser?.address?.country && (
+            <S.Row>
+              <Icon name="map-marker-radius" size={25} />
+              <S.Text>
+                {` ${currentUser.address.city} - ${currentUser.address.state}, ${currentUser.address.country}`}
+              </S.Text>
+            </S.Row>
+          )}
         </S.UserInfoSection>
       </S.ProfileArea>
     </S.Container>

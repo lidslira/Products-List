@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Alert} from 'react-native';
 
+import {birthdate} from '~/utils/validations';
 import {informationUserAction} from '~/store/ducks/user';
 
 import * as S from './styles';
@@ -48,6 +49,14 @@ const Profile = () => {
     Alert.alert('Suas informações foram salvas');
   };
 
+  const setBirthDate = (text) => {
+    let newBirthDate = text;
+    if (text) {
+      newBirthDate = birthdate(text);
+    }
+    setBirthDateCurrent(newBirthDate);
+  };
+
   return (
     <S.Container>
       <S.ContainerInput>
@@ -63,7 +72,7 @@ const Profile = () => {
         <S.TextInput
           placeholder="DD/MM/AAAA"
           value={birthDateCurrent}
-          onChangeText={setBirthDateCurrent}
+          onChangeText={setBirthDate}
         />
       </S.ContainerInput>
       <S.ContainerInput>

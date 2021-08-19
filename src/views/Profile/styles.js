@@ -19,6 +19,7 @@ export const ImageArea = styled.View`
   align-items: center;
   justify-content: center;
   background-color: white;
+  margin-bottom: 10px;
 `;
 
 export const ContainerNameTitle = styled.Text`
@@ -29,18 +30,35 @@ export const ContainerNameTitle = styled.Text`
   margin-top: 10px;
 `;
 
+export const IconContainer = styled.View`
+  flex-direction: row;
+  margin-top: 10px;
+`;
+
 export const TitleText = styled.Text`
   font-weight: bold;
   font-size: 24px;
   margin-bottom: 10px;
   margin-left: 20px;
+  text-align: center;
+`;
+
+export const Label = styled.Text`
+  font-size: 20px;
+  color: black;
+  text-align: center;
 `;
 
 export const Text = styled.Text`
   font-size: 20px;
-  color: gray;
+  color: ${({theme}) => theme.Colors.dark};
+  text-align: center;
 `;
 
+export const Column = styled.View`
+  flex-direction: column;
+  margin-bottom: 10px;
+`;
 export const Row = styled.View`
   flex-direction: row;
   margin-bottom: 10px;
@@ -50,6 +68,8 @@ export const UserInfoSection = styled.View`
   padding: 30px;
   margin-bottom: 25px;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 export const AvatarColor = styled.View`

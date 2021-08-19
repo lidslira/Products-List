@@ -27,7 +27,7 @@ const AppStack = () => (
       name={REGISTER}
       component={Register}
       options={{
-        headerShown: false,
+        title: 'Cadastrar novo item',
       }}
     />
     <Stack.Screen
