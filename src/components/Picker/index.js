@@ -10,10 +10,10 @@ const Picker = ({itemSelect, setItem, categories}) => {
     setItem(item);
     setShowList(false);
   };
-  // depois deixar apenas o item
+
   const renderItems = ({item}) => {
     return (
-      <S.Touchable onPress={() => selectItem(item.name)}>
+      <S.Touchable onPress={() => selectItem(item)}>
         <S.ContainerList>
           <S.TitleItem>{item.name}</S.TitleItem>
         </S.ContainerList>

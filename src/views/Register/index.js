@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {KeyboardAvoidingView} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import 'react-native-get-random-values';
-import {v4 as uuidv4} from 'uuid';
+
 import Picker from '~/components/Picker';
+import {insertItem} from '~/utils/grocery';
 import {insertItemAction} from '~/store/ducks/grocery';
 
 import * as S from './styles';
@@ -19,14 +19,7 @@ const Register = ({navigation}) => {
   const [category, setCategory] = useState(null);
 
   const newListItem = () => {
-    const newItem = {
-      id: uuidv4(),
-      category,
-      data: [{id: uuidv4(), name}],
-    };
-
-    const newList = groceryList;
-    newList.push(newItem);
+    const newList = insertItem(groceryList, category, name, amount);
 
     dispatch(insertItemAction(newList));
     navigation.goBack();
@@ -38,6 +31,7 @@ const Register = ({navigation}) => {
         <S.ContainerInput>
           <S.Text>Nome</S.Text>
           <S.TextInput
+            keyboardType="default"
             placeholder="Item que deseja adicionar"
             value={name}
             onChangeText={setName}
@@ -46,8 +40,8 @@ const Register = ({navigation}) => {
         <S.ContainerInput>
           <S.Text>Quantidade</S.Text>
           <S.TextInput
-            placeholder="Quantidade"
             keyboardType="numeric"
+            placeholder="Quantidade"
             value={amount}
             onChangeText={setAmount}
           />
@@ -55,7 +49,7 @@ const Register = ({navigation}) => {
         <S.ContainerPicker>
           <Picker
             categories={categoryList}
-            itemSelect={category}
+            itemSelect={category?.name}
             setItem={setCategory}
           />
         </S.ContainerPicker>

@@ -1,3 +1,5 @@
+import {PRODUCTS_LIST} from '~/constants/grocery';
+
 export const Types = {
   INSERT_ITEM_LIST: 'INSERT_ITEM_LIST',
   EDIT_ITEM_LIST: 'EDIT_ITEM_LIST',
@@ -5,7 +7,7 @@ export const Types = {
 };
 
 const INITIAL_STATE = {
-  groceryList: [],
+  groceryList: PRODUCTS_LIST,
 };
 
 export default function reducer(state = INITIAL_STATE, {type, payload}) {

@@ -14,7 +14,7 @@ const Profile = () => {
 
   const [fullNameCurrent, setFullNameCurrent] = useState('');
   const [birthDateCurrent, setBirthDateCurrent] = useState('');
-  const [genderCurrent, setGenderCurrent] = useState();
+  const [genderCurrent, setGenderCurrent] = useState('');
   const [cityCurrent, setCityCurrent] = useState('');
   const [stateCurrent, setStateCurrent] = useState('');
   const [countryCurrent, setCountryCurrent] = useState('');

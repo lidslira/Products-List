@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
-// import {listItens} from '../../data/categories';
 
 import * as S from './styles';
 
 const ListProducts = () => {
-  const {categoryList} = useSelector((state) => state.category);
   const {groceryList} = useSelector((state) => state.grocery);
 
   const [list, setList] = useState([]);
@@ -15,7 +13,7 @@ const ListProducts = () => {
       (category) => category.data.length !== 0,
     );
     setList(newList);
-  }, []);
+  }, [groceryList]);
 
   const renderItems = ({item}) => {
     return (
@@ -24,7 +22,6 @@ const ListProducts = () => {
       </S.ContainerList>
     );
   };
-  // insert categoryList in this render
 
   const renderCategory = ({item}) => {
     return (
@@ -44,8 +41,8 @@ const ListProducts = () => {
   return (
     <S.Container>
       <S.List
-        data={groceryList}
-        extraData={groceryList}
+        data={list}
+        extraData={list}
         renderItem={renderCategory}
         keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}

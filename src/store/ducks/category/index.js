@@ -1,6 +1,8 @@
-import {CATEGORIES} from '~/constants/categories';
+import {CATEGORIES} from '~/constants/grocery';
 
-export const Types = {};
+export const Types = {
+  ADD_CATEGORY: 'ADD_CATEGORY',
+};
 
 const INITIAL_STATE = {
   categoryList: CATEGORIES,
