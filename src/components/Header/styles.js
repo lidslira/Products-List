@@ -1,12 +1,11 @@
 import styled from 'styled-components/native';
 
 export const HeaderArea = styled.View`
-  flex: 2.5;
-  flex-direction: column;
+  flex: 1.5;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
-  background-color: white;
+  background-color: ${({theme}) => theme.Colors.light_sea_green};
 `;
 
 export const StatusBar = styled.StatusBar.attrs(() => ({
@@ -15,20 +14,17 @@ export const StatusBar = styled.StatusBar.attrs(() => ({
   translucent: true,
 }))``;
 
-export const HeaderImage = styled.Image`
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
-  background-color: white;
-`;
-
 export const HeaderTitleArea = styled.View`
   justify-content: center;
-  background-color: white ;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  background-color: ${({theme}) => theme.Colors.dark_cyan};
 `;
 
 export const HeaderTitle = styled.Text`
   font-size: 24px;
   font-weight: bold;
-  color: #000;
+  color: ${({theme}) => theme.Colors.white};
 `;

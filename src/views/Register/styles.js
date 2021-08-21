@@ -2,9 +2,13 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  padding: 40px;
-  align-items: center;
   background-color: white;
+`;
+
+export const AddItemArea = styled.View`
+  flex: 8;
+  align-items: center;
+  padding: 30px;
 `;
 
 export const ContainerInput = styled.View`
@@ -52,13 +56,13 @@ export const TextInput = styled.TextInput`
 `;
 
 export const Button = styled.TouchableOpacity`
-  background-color: ${({theme}) => theme.Colors.turquoise};
+  background-color: ${({theme}) => theme.Colors.light_sea_green};
   margin-top: 20px;
   border-radius: 10px;
   padding: 15px;
 `;
 
 export const ButtonText = styled.Text`
-  color: ${({theme}) => theme.Colors.dark};
+  color: ${({theme}) => theme.Colors.white};
   font-size: 20px;
 `;

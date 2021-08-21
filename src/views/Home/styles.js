@@ -6,7 +6,7 @@ export const Container = styled.KeyboardAvoidingView`
 `;
 
 export const ListContainer = styled.View`
-  flex: 7;
+  flex: 8;
   flex-direction: row;
   align-items: center;
 `;

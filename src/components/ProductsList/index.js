@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
+import EditButton from '~/components/EditButton';
+import DeleteButton from '~/components/DeleteButton';
 
 import * as S from './styles';
 
@@ -18,7 +20,17 @@ const ListProducts = () => {
   const renderItems = ({item}) => {
     return (
       <S.ContainerList>
-        <S.TitleItem> {item.name}</S.TitleItem>
+        <S.ItemContainer>
+          <S.CheckItem />
+          <S.ItemRow>
+            <S.TitleItem> {item.name}</S.TitleItem>
+            <S.TitleAmount>qnt: {item.amount}</S.TitleAmount>
+            <S.Icons>
+              <EditButton />
+              <DeleteButton />
+            </S.Icons>
+          </S.ItemRow>
+        </S.ItemContainer>
       </S.ContainerList>
     );
   };

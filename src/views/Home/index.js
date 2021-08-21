@@ -11,7 +11,7 @@ import {Container, ListContainer} from './styles';
 const Home = () => {
   return (
     <Container behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-      <Header titulo="Lista de Compras" />
+      <Header title="my first list" />
       <SearchBar />
       <ListContainer>
         <ListProducts />

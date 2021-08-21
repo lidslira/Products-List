@@ -43,7 +43,7 @@ export const TextInput = styled.TextInput`
 `;
 
 export const Button = styled.TouchableOpacity`
-  background-color: ${({theme}) => theme.Colors.turquoise};
+  background-color: ${({theme}) => theme.Colors.light_sea_green};
   height: 60px;
   width: 230px;
   margin-top: 20px;

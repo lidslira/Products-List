@@ -1,23 +1,14 @@
 import React from 'react';
-import LogoImg from '../../assets/groceries.png';
+import * as S from './styles';
 
-import {
-  HeaderArea,
-  HeaderImage,
-  HeaderTitleArea,
-  HeaderTitle,
-  StatusBar,
-} from './styles';
-
-const Header = ({titulo}) => {
+const Header = ({title}) => {
   return (
-    <HeaderArea>
-      <StatusBar />
-      <HeaderImage source={LogoImg} />
-      <HeaderTitleArea>
-        <HeaderTitle>{titulo}</HeaderTitle>
-      </HeaderTitleArea>
-    </HeaderArea>
+    <S.HeaderArea>
+      <S.StatusBar />
+      <S.HeaderTitleArea>
+        <S.HeaderTitle>{title}</S.HeaderTitle>
+      </S.HeaderTitleArea>
+    </S.HeaderArea>
   );
 };
 

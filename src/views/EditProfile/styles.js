@@ -50,7 +50,7 @@ export const ContainerButton = styled.View`
 
 export const Button = styled.TouchableOpacity`
   width: 50%;
-  background-color: ${({theme}) => theme.Colors.turquoise};
+  background-color: ${({theme}) => theme.Colors.light_sea_green};
   margin-top: 20px;
   border-radius: 6px;
   padding: 15px;

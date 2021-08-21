@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/core';
 import {styles} from './styles';
 import {HOME} from '~/constants/routes';
 
-const HeaderBar = ({title}) => {
+const HeaderIcon = ({title}) => {
   const navigation = useNavigation();
 
   return (
@@ -15,4 +15,4 @@ const HeaderBar = ({title}) => {
   );
 };
 
-export default HeaderBar;
+export default HeaderIcon;

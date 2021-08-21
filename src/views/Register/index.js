@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {KeyboardAvoidingView} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
+import Header from '../../components/Header';
 import Picker from '~/components/Picker';
 import {insertItem} from '~/utils/grocery';
 import {insertItemAction} from '~/store/ducks/grocery';
@@ -28,34 +29,37 @@ const Register = ({navigation}) => {
   return (
     <KeyboardAvoidingView behavior="height" style={{flex: 1}} enabled={false}>
       <S.Container>
-        <S.ContainerInput>
-          <S.Text>Nome</S.Text>
-          <S.TextInput
-            keyboardType="default"
-            placeholder="Item que deseja adicionar"
-            value={name}
-            onChangeText={setName}
-          />
-        </S.ContainerInput>
-        <S.ContainerInput>
-          <S.Text>Quantidade</S.Text>
-          <S.TextInput
-            keyboardType="numeric"
-            placeholder="Quantidade"
-            value={amount}
-            onChangeText={setAmount}
-          />
-        </S.ContainerInput>
-        <S.ContainerPicker>
-          <Picker
-            categories={categoryList}
-            itemSelect={category?.name}
-            setItem={setCategory}
-          />
-        </S.ContainerPicker>
-        <S.Button onPress={() => newListItem()}>
-          <S.ButtonText>CADASTRAR</S.ButtonText>
-        </S.Button>
+        <Header title="novo item" />
+        <S.AddItemArea>
+          <S.ContainerInput>
+            <S.Text>Nome</S.Text>
+            <S.TextInput
+              keyboardType="default"
+              placeholder="Item que deseja adicionar"
+              value={name}
+              onChangeText={setName}
+            />
+          </S.ContainerInput>
+          <S.ContainerInput>
+            <S.Text>Quantidade</S.Text>
+            <S.TextInput
+              keyboardType="default"
+              placeholder="Quantidade"
+              value={amount}
+              onChangeText={setAmount}
+            />
+          </S.ContainerInput>
+          <S.ContainerPicker>
+            <Picker
+              categories={categoryList}
+              itemSelect={category?.name}
+              setItem={setCategory}
+            />
+          </S.ContainerPicker>
+          <S.Button onPress={() => newListItem()}>
+            <S.ButtonText>CADASTRAR</S.ButtonText>
+          </S.Button>
+        </S.AddItemArea>
       </S.Container>
     </KeyboardAvoidingView>
   );

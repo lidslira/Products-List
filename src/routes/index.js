@@ -27,14 +27,14 @@ const AppStack = () => (
       name={REGISTER}
       component={Register}
       options={{
-        title: 'Cadastrar novo item',
+        headerShown: false,
       }}
     />
     <Stack.Screen
       name={PROFILE}
       component={Profile}
       options={{
-        title: 'Perfil',
+        headerShown: false,
       }}
     />
     <Stack.Screen

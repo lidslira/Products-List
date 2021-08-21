@@ -5,6 +5,7 @@ import {Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {EDITPROFILE} from '~/constants/routes';
 import {logoutAction} from '~/store/ducks/user';
+import Header from '../../components/Header';
 
 import * as S from './styles';
 
@@ -21,10 +22,11 @@ const Profile = () => {
 
   return (
     <S.Container>
+      <Header title="perfil" />
+      <S.ImageArea>
+        <Avatar.Image size={120} style={S.styles.avatar} />
+      </S.ImageArea>
       <S.ProfileArea>
-        <S.ImageArea>
-          <Avatar.Image size={100} style={S.styles.avatar} />
-        </S.ImageArea>
         {currentUser?.fullName ? (
           <S.ContainerNameTitle>
             <S.TitleText>Olá, {currentUser.fullName}</S.TitleText>

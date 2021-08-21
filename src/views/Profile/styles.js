@@ -7,18 +7,18 @@ export const Container = styled.View`
 `;
 
 export const ProfileArea = styled.View`
-  flex: 1;
+  flex: 7;
   width: 100%;
+  margin-top: 10px;
   align-items: center;
-  justify-content: center;
   background-color: white;
 `;
 
 export const ImageArea = styled.View`
+  flex: 3.5;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  background-color: white;
+  justify-content: flex-end;
   margin-bottom: 10px;
 `;
 
@@ -78,7 +78,8 @@ export const AvatarColor = styled.View`
 
 export const styles = StyleSheet.create({
   avatar: {
-    backgroundColor: '#40e0d0',
+    backgroundColor: '#f4f5f7',
+    borderWidth: 1,
   },
 });
 
