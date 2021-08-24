@@ -2,10 +2,11 @@ import * as React from 'react';
 import {FAB, Portal, Provider} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/core';
 // import {FabButton} from './styles';
-import {REGISTER, PROFILE} from '../../constants/routes';
+import {PROFILE} from '../../constants/routes';
 
-const FloatButton = () => {
+const FloatButton = (props) => {
   const navigation = useNavigation();
+  const {actionButton} = props;
 
   const [state, setState] = React.useState({open: false});
 
@@ -28,8 +29,7 @@ const FloatButton = () => {
             {
               icon: 'plus-box-multiple',
               label: 'Novo item',
-              onPress: () => navigation.navigate(REGISTER),
-              small: false,
+              onPress: () => actionButton(),
             },
           ]}
           onStateChange={onStateChange}
@@ -39,12 +39,6 @@ const FloatButton = () => {
     </Provider>
   );
 };
-
-/* const styles = StyleSheet.create({
-  fab: {
-    backgroundColor: 'black',
-  },
-}); */
 
 export default FloatButton;
 /*

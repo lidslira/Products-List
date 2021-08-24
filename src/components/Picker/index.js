@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import * as S from './styles';
 
-const Picker = ({itemSelect, setItem, categories}) => {
+const Picker = ({itemSelect, setItem, categories, disabled}) => {
   const [showList, setShowList] = useState(false);
 
   const selectItem = (item) => {
@@ -25,7 +25,7 @@ const Picker = ({itemSelect, setItem, categories}) => {
     <S.Container>
       <S.Label>Categoria</S.Label>
       <S.ContainerPicker>
-        <S.Touchable onPress={() => setShowList(!showList)}>
+        <S.Touchable onPress={() => setShowList(!showList)} disabled={disabled}>
           <S.PlaceholderText>
             {itemSelect || 'Escolha Categoria'}
           </S.PlaceholderText>

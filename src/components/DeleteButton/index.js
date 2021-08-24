@@ -5,7 +5,7 @@ import {TouchableOpacity} from 'react-native';
 const DeleteButton = () => {
   return (
     <TouchableOpacity>
-      <Icon name="trash-can-outline" size={24} color="black" />
+      <Icon name="trash-can-outline" size={25} color="black" />
     </TouchableOpacity>
   );
 };

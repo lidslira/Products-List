@@ -1,13 +1,18 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {TouchableOpacity} from 'react-native';
+import {EditContainer} from './styles';
 
 const EditButton = () => {
+  // const {actionButton} = props;
   return (
-    <TouchableOpacity>
-      <Icon name="circle-edit-outline" size={24} color="black" />
-    </TouchableOpacity>
+    <EditContainer>
+      <Icon
+        name="circle-edit-outline"
+        size={25}
+        color="black"
+        // onPress={() => actionButton()}
+      />
+    </EditContainer>
   );
 };
-
 export default EditButton;

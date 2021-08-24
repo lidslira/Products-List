@@ -2,7 +2,6 @@ import {PRODUCTS_LIST} from '~/constants/grocery';
 
 export const Types = {
   INSERT_ITEM_LIST: 'INSERT_ITEM_LIST',
-  EDIT_ITEM_LIST: 'EDIT_ITEM_LIST',
   REMOVE_ITEM_LIST: 'REMOVE_ITEM_LIST',
 };
 

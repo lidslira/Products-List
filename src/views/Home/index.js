@@ -5,10 +5,14 @@ import FloatButton from '../../components/FloatButton';
 import Header from '../../components/Header';
 import SearchBar from '../../components/SearchBar';
 import ListProducts from '../../components/ProductsList';
+import {REGISTER} from '../../constants/routes';
 
 import {Container, ListContainer} from './styles';
 
-const Home = () => {
+const Home = ({navigation}) => {
+  const registerItem = () => {
+    navigation.navigate(REGISTER, {item: null});
+  };
   return (
     <Container behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <Header title="my first list" />
@@ -16,7 +20,7 @@ const Home = () => {
       <ListContainer>
         <ListProducts />
       </ListContainer>
-      <FloatButton />
+      <FloatButton actionButton={registerItem} />
     </Container>
   );
 };

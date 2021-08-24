@@ -4,12 +4,14 @@ import cloneDeep from 'lodash/cloneDeep';
 
 export const insertItem = (groceryList, category, name, amount) => {
   const newList = cloneDeep(groceryList);
+
   newList.forEach((newCategory) => {
     if (newCategory.id === category.id) {
       return newCategory.data.push({
         id: uuidv4(),
         name,
         amount,
+        category: {id: category.id, name: category.name},
       });
     }
     return null;
