@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import {REGISTER} from '../../constants/routes';
 
+import {removeItem} from '~/utils/grocery';
+import {removeItemAction} from '~/store/ducks/grocery';
 import EditButton from '~/components/EditButton';
 import DeleteButton from '~/components/DeleteButton';
 import * as S from './styles';
 
 const ListProducts = () => {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const {groceryList} = useSelector((state) => state.grocery);
 
@@ -24,6 +27,12 @@ const ListProducts = () => {
     navigation.navigate(REGISTER, {item});
   };
 
+  const removeListItem = (item) => {
+    const updateList = removeItem(groceryList, item);
+
+    dispatch(removeItemAction(updateList));
+  };
+
   const renderItems = ({item}) => {
     return (
       <S.ContainerList>
@@ -31,13 +40,15 @@ const ListProducts = () => {
           <S.CheckItem />
           <S.ItemRow>
             <S.TitleItem>
-              {item.name} — {item.amount}
+              {item.name} — {item.amount} unid.
             </S.TitleItem>
             <S.Icons>
               <S.IconButton onPress={() => editItem(item)}>
                 <EditButton />
               </S.IconButton>
-              <DeleteButton />
+              <S.IconButton onPress={() => removeListItem(item)}>
+                <DeleteButton />
+              </S.IconButton>
             </S.Icons>
           </S.ItemRow>
         </S.ItemContainer>

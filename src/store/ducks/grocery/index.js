@@ -16,6 +16,11 @@ export default function reducer(state = INITIAL_STATE, {type, payload}) {
         ...state,
         groceryList: payload.groceryList,
       };
+    case Types.REMOVE_ITEM_LIST:
+      return {
+        ...state,
+        groceryList: payload.groceryList,
+      };
     default:
       return state;
   }
@@ -23,5 +28,10 @@ export default function reducer(state = INITIAL_STATE, {type, payload}) {
 
 export const insertItemAction = (groceryList) => ({
   type: Types.INSERT_ITEM_LIST,
+  payload: {groceryList},
+});
+
+export const removeItemAction = (groceryList) => ({
+  type: Types.REMOVE_ITEM_LIST,
   payload: {groceryList},
 });

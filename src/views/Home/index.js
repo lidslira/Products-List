@@ -15,7 +15,7 @@ const Home = ({navigation}) => {
   };
   return (
     <Container behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-      <Header title="my first list" />
+      <Header title="my list" />
       <SearchBar />
       <ListContainer>
         <ListProducts />

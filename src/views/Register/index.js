@@ -5,8 +5,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 
 import Header from '../../components/Header';
 import Picker from '~/components/Picker';
-import {insertItem} from '~/utils/grocery';
-import {editItem} from '~/utils/editItem';
+import {insertItem, editItem} from '~/utils/grocery';
 import {insertItemAction} from '~/store/ducks/grocery';
 
 import * as S from './styles';
@@ -64,6 +63,7 @@ const Register = () => {
             <S.Text>Quantidade</S.Text>
             <S.TextInput
               placeholder="Quantidade"
+              keyboardType="numeric"
               value={amount}
               onChangeText={setAmount}
             />

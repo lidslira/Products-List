@@ -1,12 +1,12 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 
 const DeleteButton = () => {
   return (
-    <TouchableOpacity>
+    <View>
       <Icon name="trash-can-outline" size={25} color="black" />
-    </TouchableOpacity>
+    </View>
   );
 };
 
