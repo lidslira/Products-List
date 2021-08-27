@@ -1,5 +1,7 @@
-import styled from 'styled-components/native';
+import {StyleSheet} from 'react-native';
 
-export const FabButton = styled.View`
-  background-color: '${({theme}) => theme.Colors.turquoise}';
-`;
+export const styles = StyleSheet.create({
+  fab: {
+    backgroundColor: '#20B2AA',
+  },
+});

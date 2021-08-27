@@ -19,7 +19,7 @@ export const HeaderTitleArea = styled.View`
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background-color: ${({theme}) => theme.Colors.dark_cyan};
 `;
 

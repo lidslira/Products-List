@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {FAB, Portal, Provider} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/core';
-// import {FabButton} from './styles';
+import {styles} from './styles';
 import {PROFILE} from '../../constants/routes';
 
 const FloatButton = (props) => {
@@ -18,6 +18,8 @@ const FloatButton = (props) => {
     <Provider>
       <Portal>
         <FAB.Group
+          fabStyle={[styles.fab]}
+          color="white"
           open={open}
           icon={open ? 'close' : 'menu'}
           actions={[
@@ -33,7 +35,6 @@ const FloatButton = (props) => {
             },
           ]}
           onStateChange={onStateChange}
-          onPress={() => {}}
         />
       </Portal>
     </Provider>
@@ -41,29 +42,3 @@ const FloatButton = (props) => {
 };
 
 export default FloatButton;
-/*
-const FloatButton = () => {
-  const navigation = useNavigation()
-
-  return (
-    <TouchableOpacity
-      style={{
-        borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.2)',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 70,
-        position: 'absolute',
-        bottom: 10,
-        right: 10,
-        height: 70,
-        backgroundColor: '#53b175',
-        borderRadius: 100,
-      }}
-      onPress={() => navigation.navigate (REGISTER)}>
-      <Icon name="plus" size={40} color="#000" />
-
-    </TouchableOpacity>
-  );
-}
-*/
