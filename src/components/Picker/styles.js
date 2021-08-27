@@ -8,12 +8,12 @@ export const Container = styled.View`
 `;
 
 export const Label = styled.Text`
-  font-size: 20px;
+  font-size: 18px;
   color: ${({theme}) => theme.Colors.dark};
 `;
 
 export const PlaceholderText = styled.Text`
-  font-size: 18px;
+  font-size: 16px;
   color: ${({theme}) => theme.Colors.dark};
 `;
 

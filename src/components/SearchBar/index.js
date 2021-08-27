@@ -1,8 +1,9 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import * as S from './styles';
 
-const SearchArea = () => {
+const SearchArea = ({...rest}) => {
   return (
     <S.Container>
       <S.SearchContainer>
@@ -15,7 +16,7 @@ const SearchArea = () => {
             borderColor="black"
           />
         </S.IconArea>
-        <S.SearchArea placeholder="Search" />
+        <S.SearchArea {...rest} />
       </S.SearchContainer>
     </S.Container>
   );

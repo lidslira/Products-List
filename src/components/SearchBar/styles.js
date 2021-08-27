@@ -9,7 +9,7 @@ export const SearchContainer = styled.View`
   width: 380px;
   padding-left: 15px;
   padding-right: 15px;
-  margin: 5px 0px 10px 5px;
+  margin: 5px 0px 6px 5px;
   align-items: center;
   flex-direction: row;
   border-radius: 25px;

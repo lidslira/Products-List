@@ -16,6 +16,9 @@ export const ItemContainer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 0px 0px 5px 0px;
+  margin-bottom: 10px;
+  align-items: center;
 `;
 
 export const TitleCategory = styled.Text`
@@ -29,6 +32,17 @@ export const TitleItem = styled.Text`
   color: black;
 `;
 
+export const CheckedName = styled.Text`
+  color: ${({theme}) => theme.Colors.dark};
+  font-size: 16px;
+  text-decoration-line: line-through;
+`;
+
+export const PriceQnt = styled.Text`
+  font-size: 14px;
+  color: ${({theme}) => theme.Colors.dark};
+`;
+
 export const List = styled.FlatList`
   width: 100%;
   padding: 20px;
@@ -36,25 +50,20 @@ export const List = styled.FlatList`
 
 export const Icons = styled.View`
   flex-direction: row;
-  margin-left: 5px;
 `;
-
 export const ItemRow = styled.View`
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  background-color: ${({theme}) => theme.Colors.white};
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const CheckItem = styled.TouchableOpacity`
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background-color: ${({theme}) => theme.Colors.white};
   border-radius: 20px;
   border-width: 1px;
-  margin: 0px 5px 10px 0px;
+  margin: 0px 5px 15px 0px;
 `;
 
 export const IconButton = styled.TouchableOpacity``;

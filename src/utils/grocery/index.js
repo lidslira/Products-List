@@ -2,7 +2,7 @@ import 'react-native-get-random-values';
 import {v4 as uuidv4} from 'uuid';
 import cloneDeep from 'lodash/cloneDeep';
 
-export const insertItem = (groceryList, category, name, amount) => {
+export const insertItem = (groceryList, category, name, amount, price) => {
   const newList = cloneDeep(groceryList);
 
   newList.forEach((newCategory) => {
@@ -11,6 +11,8 @@ export const insertItem = (groceryList, category, name, amount) => {
         id: uuidv4(),
         name,
         amount,
+        price,
+        isSelected: false,
         category: {id: category.id, name: category.name},
       });
     }
@@ -19,7 +21,7 @@ export const insertItem = (groceryList, category, name, amount) => {
   return newList;
 };
 
-export const editItem = (groceryList, item, name, amount) => {
+export const editItem = (groceryList, item, name, amount, price) => {
   const list = cloneDeep(groceryList);
 
   list.filter((currentCategory) => {
@@ -27,6 +29,7 @@ export const editItem = (groceryList, item, name, amount) => {
       if (currentItem.id === item.id) {
         currentItem.name = name;
         currentItem.amount = amount;
+        currentItem.price = price;
       }
       return null;
     });
@@ -37,7 +40,6 @@ export const editItem = (groceryList, item, name, amount) => {
 
 export const removeItem = (groceryList, item) => {
   const updateList = cloneDeep(groceryList);
-
   updateList.filter((currentCategory) => {
     currentCategory.data = currentCategory.data.filter(
       (currentItem) => currentItem.id !== item.id,
@@ -47,14 +49,35 @@ export const removeItem = (groceryList, item) => {
   return updateList;
 };
 
-/*
-  const categoryIndex = updateList.findIndex((obj) => obj.id === category.id);
-  const categoryIndex.data = categoryIndex.data;
-  const itemIndex = categoryIndex.data.findIndex((obj) => obj.id === item.id);
+export const checkItem = (groceryList, item) => {
+  const checkedList = cloneDeep(groceryList);
 
-  console.tron.log('item a ser remov', itemIndex);
+  checkedList.forEach((currentCategory) => {
+    currentCategory.data.forEach((currentItem) => {
+      if (currentItem.id === item.id) {
+        currentItem.isSelected = !currentItem.isSelected;
+      }
+      return null;
+    });
+    return null;
+  });
+  return checkedList;
+};
 
-  // updateList.splice(itemIndex, 1);
+export const categoriesFilled = (groceryList) => {
+  const completeList = groceryList.filter(
+    (category) => category.data.length !== 0,
+  );
+  return completeList;
+};
 
-  return updateList;
-*/
+export const searchItem = (groceryList) => {
+  const itemsList = [];
+  groceryList.forEach((category) => {
+    category.data.forEach((item) => {
+      return itemsList.push(item);
+    });
+    return null;
+  });
+  return itemsList;
+};

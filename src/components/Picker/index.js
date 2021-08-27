@@ -27,7 +27,7 @@ const Picker = ({itemSelect, setItem, categories, disabled}) => {
       <S.ContainerPicker>
         <S.Touchable onPress={() => setShowList(!showList)} disabled={disabled}>
           <S.PlaceholderText>
-            {itemSelect || 'Escolha Categoria'}
+            {itemSelect || 'Escolha a categoria'}
           </S.PlaceholderText>
           <Icon name={showList ? 'angle-up' : 'angle-down'} size={20} />
         </S.Touchable>

@@ -5,7 +5,7 @@ import {View} from 'react-native';
 const DeleteButton = () => {
   return (
     <View>
-      <Icon name="trash-can-outline" size={25} color="black" />
+      <Icon name="trash-can-outline" size={26} color="black" />
     </View>
   );
 };

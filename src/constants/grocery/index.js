@@ -5,6 +5,11 @@ export const CATEGORIES = [
   {id: 4, name: 'HortiFruti'},
   {id: 5, name: 'Higiene'},
   {id: 6, name: 'Limpeza'},
+  {id: 7, name: 'Bebidas'},
+  {id: 8, name: 'Padaria'},
+  {id: 9, name: 'Frios e Laticínios'},
+  {id: 10, name: 'Frutos do mar'},
+  {id: 11, name: 'Outros'},
 ];
 
 export const PRODUCTS_LIST = [
@@ -36,6 +41,31 @@ export const PRODUCTS_LIST = [
   {
     id: 6,
     category: 'Limpeza',
+    data: [],
+  },
+  {
+    id: 7,
+    category: 'Bebidas',
+    data: [],
+  },
+  {
+    id: 8,
+    category: 'Padaria',
+    data: [],
+  },
+  {
+    id: 9,
+    category: 'Frios e Laticínios',
+    data: [],
+  },
+  {
+    id: 10,
+    category: 'Frutos do mar',
+    data: [],
+  },
+  {
+    id: 11,
+    category: 'Outros',
     data: [],
   },
 ];

@@ -22,25 +22,27 @@ const Register = () => {
 
   const [name, setName] = useState('');
   const [amount, setAmount] = useState(0);
+  const [price, setPrice] = useState(0);
   const [category, setCategory] = useState(null);
 
   useEffect(() => {
     if (item) {
       setName(item.name);
       setAmount(item.amount);
+      setPrice(item.price);
       setCategory(item.category);
     }
   }, []);
 
   const newListItem = () => {
-    const newList = insertItem(groceryList, category, name, amount);
+    const newList = insertItem(groceryList, category, name, amount, price);
 
     dispatch(insertItemAction(newList));
     navigation.goBack();
   };
 
   const editListItem = () => {
-    const list = editItem(groceryList, item, name, amount);
+    const list = editItem(groceryList, item, name, amount, price);
 
     dispatch(insertItemAction(list));
     navigation.goBack();
@@ -66,6 +68,15 @@ const Register = () => {
               keyboardType="numeric"
               value={amount}
               onChangeText={setAmount}
+            />
+          </S.ContainerInput>
+          <S.ContainerInput>
+            <S.Text>Preço</S.Text>
+            <S.TextInput
+              placeholder="Preço"
+              keyboardType="numeric"
+              value={price}
+              onChangeText={setPrice}
             />
           </S.ContainerInput>
           <S.ContainerPicker>

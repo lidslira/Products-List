@@ -6,13 +6,13 @@ export const Container = styled.View`
 `;
 
 export const AddItemArea = styled.View`
-  flex: 8;
+  flex: 9;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
 `;
 
 export const ContainerInput = styled.View`
-  flex: 0.2;
+  flex: 0.3;
   width: 100%;
   padding: 10px;
   margin-top: 15px;
@@ -37,18 +37,14 @@ export const ContainerNameTitle = styled.View`
   border-color: ${({theme}) => theme.Colors.dark};
 `;
 
-export const TitleText = styled.Text`
-  font-size: 20px;
-`;
-
 export const Text = styled.Text`
-  font-size: 20px;
+  font-size: 18px;
   color: ${({theme}) => theme.Colors.dark};
 `;
 
 export const TextInput = styled.TextInput`
   padding: 20px 10px;
-  font-size: 18px;
+  font-size: 15px;
   width: 100%;
   border-radius: 10px;
   border-width: 1px;
